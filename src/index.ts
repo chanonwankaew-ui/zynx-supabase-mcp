@@ -7,6 +7,7 @@ import { listAllowedTables } from "./tools/listAllowedTables.js";
 import { queryTable, QueryTableInputSchema } from "./tools/queryTable.js";
 import { searchMemory, SearchMemoryInputSchema } from "./tools/searchMemory.js";
 import { addMemory, AddMemoryInputSchema } from "./tools/addMemory.js";
+import { createProject, CreateProjectInputSchema } from "./tools/createProject.js";
 import { listWorkspaceFiles, ListWorkspaceFilesInputSchema } from "./tools/listWorkspaceFiles.js";
 import { readWorkspaceFile, ReadWorkspaceFileInputSchema } from "./tools/readWorkspaceFile.js";
 
@@ -74,6 +75,16 @@ server.registerTool(
     inputSchema: AddMemoryInputSchema.shape
   },
   async (input) => textResult(await addMemory(input))
+);
+
+server.registerTool(
+  "create_project",
+  {
+    title: "Create Zynx Project",
+    description: "Create a Zynx project record for orchestration, memory, research, coding, and automation work.",
+    inputSchema: CreateProjectInputSchema.shape
+  },
+  async (input) => textResult(await createProject(input))
 );
 
 server.registerTool(

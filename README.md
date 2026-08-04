@@ -9,6 +9,7 @@ Real TypeScript MCP server for connecting Zynx agents to Supabase through safe, 
 - `query_table` — read rows from allowlisted Supabase tables
 - `search_memory` — keyword search over Zynx memory table
 - `add_memory` — persist project, research, coding, or automation memory
+- `create_project` — create a project orchestration record
 - `list_workspace_files` — list files under configured workspace roots
 - `read_workspace_file` — read small text files under configured workspace roots
 
@@ -73,6 +74,10 @@ List workspace files from /Users/kant/zynx-supabase-mcp.
 
 ```text
 Add this project decision to Zynx memory.
+```
+
+```text
+Create a Zynx project named Zynx MCP Dev.
 ```
 
 ## Security rules
