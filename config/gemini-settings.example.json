@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "zynx-supabase": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/zynx-supabase-mcp/dist/index.js"],
+      "env": {
+        "SUPABASE_URL": "https://YOUR_PROJECT_ID.supabase.co",
+        "SUPABASE_KEY": "YOUR_SUPABASE_SERVER_KEY",
+        "ZYNX_ALLOWED_TABLES": "zynx_projects,zynx_memory,zynx_audit_logs,zynx_documents,zynx_vectors",
+        "ZYNX_DEFAULT_LIMIT": "10",
+        "ZYNX_MAX_LIMIT": "100",
+        "ZYNX_ENABLE_AUDIT": "true",
+        "ZYNX_AUDIT_TABLE": "zynx_audit_logs"
+      },
+      "timeout": 30000,
+      "trust": false,
+      "includeTools": [
+        "get_agent_health",
+        "list_allowed_tables",
+        "query_table",
+        "search_memory"
+      ]
+    }
+  }
+}
